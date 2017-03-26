@@ -1,8 +1,6 @@
 FROM php:7.1-apache
 MAINTAINER inlee <einable@gmail.com>
 
-#RUN docker-php-ext-install pdo pdo_mysql
-
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
