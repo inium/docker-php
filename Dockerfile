@@ -6,9 +6,10 @@ RUN apt-get update && apt-get install -y \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng12-dev \
-    libicu-dev \
-     libxml2-dev \
-    vim \
+        libicu-dev \
+        libxml2-dev \
+        vim \
+        curl \
         wget \
         unzip \
         git \
