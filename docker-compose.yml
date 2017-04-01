@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
       args:
         buildno: 1.0
-    image: apache2-php7-rewrite:1.0
+    image: apache2-php7:latest
     container_name: web
     hostname: web
     depends_on: 
