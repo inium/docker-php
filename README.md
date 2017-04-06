@@ -96,8 +96,7 @@ docker run -d --name apache2-php7 -p 10000:80 --link mariadb:db \
 > *cf.* [Legacy container links](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/) 의 내용에 따르면,  --link 버전은 점차 없어질(deprecated) 될 예정입니다 (Warning: The --link flag is a deprecated legacy feature of Docker 항목 참조).
 
 #### container 이름을 이용할 경우 
---link 옵션이 점차 없어질 예정이기 때문에, docker에서는 컨테이너 이름을 이용해 상호간 통신이 가능하도록 지원하고 있으며 db를 연결할 때 host 이름으로 컨테이너 이름을 이용할 수 있습니다.
-
+--link 옵션이 점차 없어질 예정이기 때문에, docker에서는 컨테이너 이름을 이용해 상호간 통신이 가능하도록 지원하고 있으며 db를 연결할 때 host 이름으로 컨테이너 이름을 이용할 수 있습니다.(단, 컨테이너들은 같은 네트워크 브릿지 내에 있어야 합니다.)
 ```
 docker run -d --name apache2-php7 -p 10000:80 --link mariadb:db \
 -v $(pwd)/examples/database/network:/var/www/html apache2-php7
