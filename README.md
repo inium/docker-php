@@ -111,6 +111,3 @@ docker run -d --name apache2-php7 -p 10000:80 --link mariadb:db \
 ```
 docker-compose up -d
 ```
-
-## LICENSE
-MIT
