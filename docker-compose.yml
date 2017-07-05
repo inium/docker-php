@@ -16,6 +16,7 @@ services:
       - "10000:80"
     volumes: 
       - ".:/var/www/html"
+      - "./config/php.ini:/usr/local/etc/php/conf.d/php.ini"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
