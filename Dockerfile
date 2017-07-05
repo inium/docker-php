@@ -24,3 +24,5 @@ RUN a2enmod rewrite
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
+
+VOLUME ['/var/www/html', '/usr/local/etc/php/conf.d']
