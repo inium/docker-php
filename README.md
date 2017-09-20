@@ -1,4 +1,4 @@
-# docker-apache2-php7-rewrite
+# docker-apache2-php7
 
 apache2의 rewrite와 php7의 확장 모듈 설치가 적용된 dockerfile 입니다.
 
