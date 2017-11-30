@@ -7,6 +7,9 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 # 미러 사이트를 ftp.kaist.ac.kr로 변경
 RUN sed -i 's/archive.ubuntu.com/ftp.kaist.ac.kr/g' /etc/apt/sources.list
 
+# Cron 
+RUN apt-get install -y cron
+
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
