@@ -47,9 +47,8 @@ ubuntu:trusty를 기반으로 하며 아래의 추가 모듈 설치
 본 프로젝트를 Clone 하여 Local 에 저장합니다.
 
 ```
-git clone https://github.com/edeun/
+git clone https://github.com/edeun/docker-apache2-php7.git
 ```
-> edeun 뒤에 이 부분을 붙여줘야 할것 같습니다. https://github.com/edeun/docker-apache2-php7.git
 
 ### Build dockerfile to docker image
 
