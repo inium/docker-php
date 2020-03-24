@@ -1,34 +1,41 @@
-FROM php:7.1-apache
-MAINTAINER inlee <einable@gmail.com>
+FROM php:7.4.4
+LABEL maintainer="inlee <einable@gmail.com>"
 
-# localtime 을 UST 에서 KST(Korea Standard Time)로 변경
-RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+# 미러 사이트를 kaist로 변경
+RUN sed -i 's/deb.debian.org/ftp.kaist.ac.kr/g' /etc/apt/sources.list
 
-# 미러 사이트를 ftp.kaist.ac.kr로 변경
-RUN sed -i 's/archive.ubuntu.com/ftp.kaist.ac.kr/g' /etc/apt/sources.list
-
+# Package 설치
 RUN apt-get update && apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libmcrypt-dev \
-        libpng12-dev \
-        libicu-dev \
-        libxml2-dev \
-        vim \
+        build-essential \
+        git \
         curl \
         wget \
+        openssl \
         unzip \
-        git \
-    && docker-php-ext-install -j$(nproc) iconv intl xml soap mcrypt opcache pdo pdo_mysql mysqli mbstring \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+        supervisor \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+        libxml2-dev \
+        libicu-dev \
+        libzip-dev \
+        libonig-dev \
+    && docker-php-ext-install zip iconv opcache \
+    && docker-php-ext-install bcmath ctype json mbstring pdo pdo_mysql tokenizer xml \
+    && docker-php-ext-configure gd \
     && docker-php-ext-install -j$(nproc) gd
 
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride all/' /etc/apache2/apache2.conf
-
-RUN a2enmod rewrite
-
+# Composer install
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-VOLUME ['/var/www/html', '/usr/local/etc/php/conf.d']
+# Set volume
+VOLUME ["/var/www/html", "/usr/local/etc/php/conf.d/php.ini"]
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Port expose
+EXPOSE 80 8000
+
+CMD ["/bin/bash"]
