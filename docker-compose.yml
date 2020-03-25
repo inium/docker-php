@@ -10,10 +10,10 @@ services:
     hostname: php
     working_dir: /var/www/html
     command: php -S 0.0.0.0:80 -t public
-    ports: 
+    ports:
       - "10000:80"
       - "18000:8000"
-    volumes: 
+    volumes:
       - ./html:/var/www/html
       - ./php.ini:/usr/local/etc/php/conf.d/php.ini:ro
     network_mode: bridge
