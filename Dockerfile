@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
         wget \
         openssl \
         unzip \
-        supervisor \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
