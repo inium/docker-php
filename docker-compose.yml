@@ -14,6 +14,6 @@ services:
       - "10000:80"
       - "18000:8000"
     volumes: 
-      - ./app:/var/www/html
+      - ./html:/var/www/html
       - ./php.ini:/usr/local/etc/php/conf.d/php.ini:ro
     network_mode: bridge
