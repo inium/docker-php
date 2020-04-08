@@ -5,14 +5,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: inium/php:7.4.4
+    image: inium/php:7.4.4-fpm
     container_name: php
     hostname: php
     working_dir: /var/www/html
-    command: php -S 0.0.0.0:80 -t public
+    environment: 
+      - DOCKER_ENV=development
     ports:
       - "10000:80"
-      - "18000:8000"
     volumes:
       - ./html:/var/www/html
       - ./php.ini:/usr/local/etc/php/conf.d/php.ini:ro
