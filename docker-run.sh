@@ -23,5 +23,5 @@ else
 
     echo "******* Xdebug is enabled *******"
 
-    php -S 0.0.0.0:80 -t
+    php -S 0.0.0.0:80
 fi
