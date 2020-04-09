@@ -1,7 +1,5 @@
 # inium/docker-php
 
-본 Branch는 Laravel용 입니다. 일반 PHP 프로젝트는 master 브랜치를 참조해주세요.
-
 PHP Docker 공식 이미지에 추가 패키지를 포함한 Dockerfile과 실행을 위해 구현된 환경설정 프로젝트 입니다.
 
 ## 개요
