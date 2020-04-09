@@ -63,13 +63,7 @@ Port는 80, 9000 번 2가지를 사용합니다.
 sudo git clone https://github.com/inium/docker-php.git /path/to
 ```
 
-### 2. Change branch to laravel
-
-```bash
-sudo git checkout laravel
-```
-
-### 3. 실행
+### 2. 실행
 
 ```bash
 sudo docker-compose up -d
