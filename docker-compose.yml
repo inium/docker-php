@@ -5,11 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: inium/php:7.4.4-fpm-laravel
+    image: inium/php:7.4.4-fpm
     container_name: php
     hostname: php
-    working_dir: /var/www/html/public
-    environment: 
+    environment:
       - DOCKER_ENV=development
     ports:
       - "10000:80"

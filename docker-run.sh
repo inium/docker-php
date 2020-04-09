@@ -21,5 +21,7 @@ else
     echo "xdebug.remote_autostart=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
     echo "xdebug.remote_log=/usr/local/etc/php/xdebug.log" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-    php -S 0.0.0.0:80 -t public
+    echo "******* Xdebug is enabled *******"
+
+    php -S 0.0.0.0:80 -t
 fi
