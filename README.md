@@ -129,7 +129,7 @@ server {
 }
 ```
 
-- {STATIC-FILES-LOCATION}: Container 내 소스코드 저장 경로로(Document Root) 본 프로젝트는 /var/www/html/public 경로. NginX 컨테이너에 해당 volume이 공유되어 있어야 함.
+- {STATIC-FILES-LOCATION}: Container 내 소스코드 저장 경로로(Document Root) 본 프로젝트는 /var/www/html 경로. NginX 컨테이너에 해당 volume이 공유되어 있어야 함.
 - {PHP-FPM-SERVER}: 컨테이너(Container)의 이름 or IP 주소
 
 ## License
