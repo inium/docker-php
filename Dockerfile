@@ -55,4 +55,4 @@ WORKDIR /var/www/html
 # Port expose
 EXPOSE 80
 
-ENTRYPOINT [ "/run.sh"]
+CMD [ "/run.sh"]
