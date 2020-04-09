@@ -134,16 +134,6 @@ server {
 - {STATIC-FILES-LOCATION}: Container 내 소스코드 저장 경로로(Document Root) 본 프로젝트는 /var/www/html/public 경로. NginX 컨테이너에 해당 volume이 공유되어 있어야 함.
 - {PHP-FPM-SERVER}: 컨테이너(Container)의 이름 or IP 주소
 
-### Laravel 프로젝트 생성
-
-라라벨 프로젝트의 경우 아래의 명령어를 통해 프로젝트를 실행할 수 있습니다.
-
-```bash
-sudo docker-compose run --rm --service-ports php composer create-project --prefer-dist laravel/laravel .
-```
-
-위 명령어의 마지막 .은 Container에서 /var/www/html을 말하며 Host에서 ./html 디렉터리를 의미합니다.
-
 ## License
 
 MIT
