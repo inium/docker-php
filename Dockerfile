@@ -6,7 +6,7 @@ LABEL maintainer="inlee <einable@gmail.com>"
 
 # php-fpm 9000번 기본 포트를 80번으로 변경
 # 9000번은 xdebug용으로 사용하기 때문에 혼란이 올 수 있어서 Port 번호 교체
-RUN sed -i 's/9000/3001/' /usr/local/etc/php-fpm.d/zz-docker.conf
+RUN sed -i 's/9000/80/' /usr/local/etc/php-fpm.d/zz-docker.conf
 
 # Install packages & docker configurations.
 RUN apt-get update && apt-get install -y \
@@ -55,4 +55,4 @@ WORKDIR /var/www/html
 # Port expose
 EXPOSE 80
 
-ENTRYPOINT [ "/run.sh" ]
+ENTRYPOINT [ "/run.sh", "&"]
