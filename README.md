@@ -1,5 +1,7 @@
 # inium/docker-php
 
+**본 프로젝트는 일반 php를 위한 docker 설정입니다. Laravel을 위한 php-fpm 설정은 `laravel branch`의 내용을 참조해주세요.**
+
 PHP Docker 공식 이미지에 추가 패키지를 포함한 Dockerfile과 실행을 위해 구현된 환경설정 프로젝트 입니다.
 
 ## 개요
