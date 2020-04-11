@@ -82,9 +82,9 @@ Project를 Clone한 디렉터리에서 아래 명령어를 실행합니다.
 docker build --tag inium/php:7.4.4-fpm .
 ```
 
-### 2. 실행
+### 3. 실행
 
-#### 2-1. Docker Run 이용
+#### 3-1. Docker Run 이용
 
 일반 php 프로젝트일 경우(/var/www/html을 Root로 하는 경우), 아래의 명령어로 실행합니다.
 
@@ -118,7 +118,7 @@ sudo docker run -d \
             inium/php:7.4.4-fpm
 ```
 
-#### 2-2. Docker Compose 이용
+#### 3-2. Docker Compose 이용
 
 본 프로젝트에는 `docker compose`를 이용해 실행할 수 있도록 docker-compose.yml이 정의되어 있으며 환경변수 입력을 위해 `.env`를 이용합니다. `.env` 파일의 구조는 아래와 같습니다.
 
@@ -140,6 +140,16 @@ sudo cp .env.template .env
 ```bash
 docker-compose up -d
 ```
+
+### 4. Laravel 프로젝트 생성
+
+라라벨 프로젝트의 경우 아래의 명령어를 통해 프로젝트를 실행할 수 있습니다.
+
+```bash
+sudo docker-compose run --rm --service-ports php composer create-project --prefer-dist laravel/laravel .
+```
+
+위 명령어의 마지막 .은 Container에서 /var/www/html을 말하며 Host에서 ./html 디렉터리를 의미합니다.
 
 ## 추가 설정
 
