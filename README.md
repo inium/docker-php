@@ -39,7 +39,7 @@ development 모드에서 DOCKER_LARAVEL 환경변수 값을 true로 하면 Larav
 
 - DOCKER_LARAVEL 환경변수 값을 true로 하여 실행 시 /public 디렉터리 파일을 실행합니다. Laravel 뿐만 아니라 /public 디렉터리에 실행파일이 있는 프로젝트인 경우 true로 설정하여 사용 가능합니다.
 
-production 모드일 경우 nginx 환경설정 파일의 Root 지시자(Directive)의 값을 Laravel 실행 디렉터리인 /var/www/html/public로 수정하여 사용해야 합니다(관련 내용 [Production 모드에서 NginX 설정](#roduction-모드에서-nginx-설정) 참조)
+production 모드일 경우 nginx 환경설정 파일의 Root 지시자(Directive)의 값을 Laravel 실행 디렉터리인 /var/www/html/public로 수정하여 사용해야 합니다([Production 모드에서 NginX 설정](#production-모드에서-nginx-설정) 참조)
 
 ### Ports
 
