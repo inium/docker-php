@@ -2,7 +2,7 @@ FROM php:7.4.4-fpm
 LABEL maintainer="inlee <einable@gmail.com>"
 
 # 미러 사이트를 kaist로 변경. 필요시 아래 주석 해제 후 사용.
-RUN sed -i 's/deb.debian.org/ftp.kaist.ac.kr/g' /etc/apt/sources.list
+# RUN sed -i 's/deb.debian.org/ftp.kaist.ac.kr/g' /etc/apt/sources.list
 
 # php-fpm 9000번 기본 포트를 80번으로 변경
 # 9000번은 xdebug용으로 사용하기 때문에 혼란이 올 수 있어서 Port 번호 교체
