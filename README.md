@@ -4,7 +4,7 @@ PHP Docker 공식 이미지에 추가 패키지를 포함한 Dockerfile과 실�
 
 ## 개요
 
-PHP Docker 공식 이미지 중 [php:7.4.4-fpm](https://hub.docker.com/layers/php/library/php/7.4.4-fpm/images/sha256-215232c33da867319f013815a8e136d4a7380ff0dafc286c11e33e80356d5a43?context=explore)을 이용해 추가 패키지를 포함한 Dockerfile 구성과 실행을 위한 환경설정을 구현하였습니다. 또한 Laravel을 사용할 수 있도록 하였였습니다.
+PHP Docker 공식 이미지 중 [php:7.4.4-fpm](https://hub.docker.com/layers/php/library/php/7.4.4-fpm/images/sha256-215232c33da867319f013815a8e136d4a7380ff0dafc286c11e33e80356d5a43?context=explore)을 이용해 추가 패키지를 포함한 Dockerfile 구성과 실행을 위한 환경설정을 구현하였습니다. 또한 Laravel을 사용할 수 있도록 하였습니다.
 
 ## 구성
 
