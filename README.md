@@ -148,8 +148,14 @@ docker-compose up -d
 #### Docker Run
 
 ```bash
-sudo docker run --rm --name php -v $(pwd):/var/www/html inium/php:7.4.4-fpm composer create-project --prefer-dist laravel/laravel .
+sudo docker run --rm \
+                --name php \
+                -v $(pwd):/var/www/html \
+                inium/php:7.4.4-fpm \
+                composer create-project --prefer-dist laravel/laravel .
 ```
+
+위 명령어의 마지막 .은 Container에서 /var/www/html을 말하며 Host에서 ./html 디렉터리를 의미합니다.
 
 #### Docker Compose
 
