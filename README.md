@@ -145,6 +145,14 @@ docker-compose up -d
 
 라라벨 프로젝트의 경우 아래의 명령어를 통해 프로젝트를 실행할 수 있습니다.
 
+#### Docker Run
+
+```bash
+sudo docker run --rm --name php -v $(pwd):/var/www/html inium/php:7.4.4-fpm composer create-project --prefer-dist laravel/laravel .
+```
+
+#### Docker Compose
+
 ```bash
 sudo docker-compose run --rm --service-ports php composer create-project --prefer-dist laravel/laravel .
 ```
