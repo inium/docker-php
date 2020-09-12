@@ -42,7 +42,7 @@ ENV DOCKER_ENV development
 ENV DOCKER_LARAVEL false
 
 # Add a entrypoint script
-ADD ./docker-run.sh /run.sh
+ADD ./run.sh /run.sh
 RUN chmod +x /run.sh
 
 # Remove CR(Carriage Return, /r) in case of the file made or modified from Windows.
