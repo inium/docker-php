@@ -4,7 +4,7 @@ PHP Docker 공식 이미지에 추가 패키지를 포함한 Dockerfile과 실�
 
 ## 개요
 
-PHP Docker 공식 이미지 중 [php:7.4.4-fpm](https://hub.docker.com/layers/php/library/php/7.4.4-fpm/images/sha256-215232c33da867319f013815a8e136d4a7380ff0dafc286c11e33e80356d5a43?context=explore)을 이용해 추가 패키지를 포함한 Dockerfile 구성과 실행을 위한 환경설정을 구현하였습니다. 또한 Laravel을 사용할 수 있도록 하였습니다.
+PHP Docker 공식 이미지 중 [php:7.4.10-fpm]을 이용해 추가 패키지를 포함한 Dockerfile 구성과 실행을 위한 환경설정을 구현하였습니다. 또한 Laravel을 사용할 수 있도록 하였습니다.
 
 ## 구성
 
@@ -23,7 +23,7 @@ PHP Docker 공식 이미지 중 [php:7.4.4-fpm](https://hub.docker.com/layers/ph
 
 본 프로젝트는 DOCEKR_ENV 환경변수 값을 참조해 개발(development)모드와 운영(production)모드 2가지로 동작합니다. DOCKER_ENV 환경변수 값이 development면 개발, production면 운영 모드로 동작하며 기본값은 development 입니다.
 
-실행 시 컨테이너(Container) 내부에 저장된 `run.sh` (원본: [docker-run.sh](/docker-run.sh)) 를 실행하며 아래와 같이 동작합니다.
+실행 시 컨테이너(Container) 내부에 저장된 [`run.sh`](/run.sh) 를 실행하며 아래와 같이 동작합니다.
 
 - development
   - `php` 명령어를 이용해 built-in 서버 동작.
@@ -79,7 +79,7 @@ sudo git clone https://github.com/inium/docker-php.git /path/to
 Project를 Clone한 디렉터리에서 아래 명령어를 실행합니다.
 
 ```bash
-docker build --tag inium/php:7.4.4-fpm .
+docker build --tag inium/php:7.4.10-fpm .
 ```
 
 ### 3. 실행
@@ -95,7 +95,7 @@ sudo docker run -d \
             -e DOCKER_ENV=development
             -v /path/to/html:/var/www/html \
             -v /path/to/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
-            inium/php:7.4.4-fpm
+            inium/php:7.4.10-fpm
 ```
 
 `-v` 옵션의 /path/to는 해당 파일이 존재하는 디렉터리 입니다.
@@ -115,7 +115,7 @@ sudo docker run -d \
             -e DOCKER_LARAVEL=true
             -v /path/to/html:/var/www/html \
             -v /path/to/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
-            inium/php:7.4.4-fpm
+            inium/php:7.4.10-fpm
 ```
 
 #### 3-2. Docker Compose 이용
@@ -151,7 +151,7 @@ docker-compose up -d
 sudo docker run --rm \
                 --name php \
                 -v $(pwd):/var/www/html \
-                inium/php:7.4.4-fpm \
+                inium/php:7.4.10-fpm \
                 composer create-project --prefer-dist laravel/laravel .
 ```
 
@@ -200,7 +200,7 @@ sudo docker-compose run --rm --service-ports php composer create-project --prefe
 
 - 참조: <https://code.visualstudio.com/docs/editor/debugging>
 
-컨테이너(Container)의 xdebug 설정은 컨테이너로 실행 시 실행되는 `run.sh` (원본: [docker-run.sh](/docker-run.sh)) 파일 내에 정의되어 있습니다.
+컨테이너(Container)의 xdebug 설정은 컨테이너로 실행 시 실행되는 [`run.sh`](run.sh) 파일 내에 정의되어 있습니다.
 
 ### Production 모드에서 NginX 설정
 
