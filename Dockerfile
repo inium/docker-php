@@ -1,4 +1,4 @@
-FROM php:7.4.10-fpm
+FROM php:7.4.12-fpm
 LABEL maintainer="inlee <einable@gmail.com>"
 
 # 미러 사이트를 kaist로 변경. 필요시 아래 주석 해제 후 사용.
