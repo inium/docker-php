@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: inium/php:7.4.4-fpm
+    image: inium/php:7.4.12-fpm
     container_name: php
     hostname: php
     environment:
