@@ -4,7 +4,7 @@ PHP Docker 공식 이미지에 추가 패키지를 포함한 Dockerfile과 실�
 
 ## 개요
 
-PHP Docker 공식 이미지 중 [php:7.4.12-fpm]을 이용해 추가 패키지를 포함한 Dockerfile 구성과 실행을 위한 환경설정을 구현하였습니다. 또한 Laravel을 사용할 수 있도록 하였습니다.
+PHP Docker 공식 이미지 중 [php:8.0.1-fpm]을 이용해 추가 패키지를 포함한 Dockerfile 구성과 실행을 위한 환경설정을 구현하였습니다. 또한 Laravel을 사용할 수 있도록 하였습니다.
 
 ## 구성
 
@@ -79,7 +79,7 @@ sudo git clone https://github.com/inium/docker-php.git /path/to
 Project를 Clone한 디렉터리에서 아래 명령어를 실행합니다.
 
 ```bash
-docker build --tag inium/php:7.4.12-fpm .
+docker build --tag inium/php:8.0.1-fpm .
 ```
 
 ### 3. 실행
@@ -95,7 +95,7 @@ sudo docker run -d \
             -e DOCKER_ENV=development
             -v /path/to/html:/var/www/html \
             -v /path/to/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
-            inium/php:7.4.12-fpm
+            inium/php:8.0.1-fpm
 ```
 
 `-v` 옵션의 /path/to는 해당 파일이 존재하는 디렉터리 입니다.
@@ -115,7 +115,7 @@ sudo docker run -d \
             -e DOCKER_LARAVEL=true
             -v /path/to/html:/var/www/html \
             -v /path/to/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
-            inium/php:7.4.12-fpm
+            inium/php:8.0.1-fpm
 ```
 
 #### 3-2. Docker Compose 이용
@@ -151,7 +151,7 @@ docker-compose up -d
 sudo docker run --rm \
                 --name php \
                 -v $(pwd):/var/www/html \
-                inium/php:7.4.12-fpm \
+                inium/php:8.0.1-fpm \
                 composer create-project --prefer-dist laravel/laravel .
 ```
 
