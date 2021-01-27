@@ -1,4 +1,4 @@
-FROM php:7.4.12-fpm
+FROM php:8.0.1-fpm
 LABEL maintainer="inlee <einable@gmail.com>"
 
 # 미러 사이트를 kaist로 변경. 필요시 아래 주석 해제 후 사용.
@@ -18,18 +18,29 @@ RUN apt-get update && apt-get install -y \
         unzip \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
+        libwebp-dev \
         libpng-dev \
         libxml2-dev \
         libicu-dev \
         libzip-dev \
         libonig-dev \
-    && docker-php-ext-install zip iconv opcache \
-    && docker-php-ext-install bcmath ctype json mbstring pdo pdo_mysql tokenizer xml \
-    && docker-php-ext-configure gd \
-    && docker-php-ext-install -j$(nproc) gd
-
-# Install xdebug
-RUN pecl install xdebug
+    && phpModules=" \
+            bcmath \
+            ctype \
+            exif \
+            gd \
+            iconv \
+            mbstring \
+            opcache \
+            pdo \
+            pdo_mysql \
+            tokenizer \
+            xml \
+            zip \
+        " \
+    && pecl install xdebug \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) $phpModules
 
 # Composer install
 RUN curl -sS https://getcomposer.org/installer | php
