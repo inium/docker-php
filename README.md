@@ -173,6 +173,8 @@ sudo docker-compose run --rm --service-ports php composer create-project --prefe
 
 - 참고: <https://stackoverflow.com/questions/52579102/debug-php-with-vscode-and-docker>
 
+xdebug 사용하기 전 **[PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)** 패키지가 설치되어 있어야 합니다.
+
 ### launch.json
 
 ```bash
@@ -183,7 +185,7 @@ sudo docker-compose run --rm --service-ports php composer create-project --prefe
         "name": "Listen for XDebug",
         "type": "php",
         "request": "launch",
-        "port": 9000,
+        "port": 9003,
         "log": true,
         "externalConsole": false,
         "pathMappings": {
