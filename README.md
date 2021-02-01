@@ -43,12 +43,12 @@ production 모드일 경우 nginx 환경설정 파일의 Root 지시자(Directiv
 
 ### Ports
 
-Port는 80, 9000 번 2가지를 사용합니다.
+Port는 80, 9003 번 2가지를 사용합니다.
 
 - 80번: development, production 웹 서버용으로 사용.
   - development: `php` 명령어를 이용한 built-in server 실행
   - production: `php-fpm` 명령어 실행. **php-fpm 에서 사용하는 기본 Port는 9000번이나 xdebug에서 사용하는 Port 번호와 혼동되지 않도록 80번으로 강제 변경하여 사용하도록 설정.**
-- 9000번: Xdebug 용으로 사용.
+- 9003번: Xdebug 용으로 사용.
 
 ### Volumes
 
