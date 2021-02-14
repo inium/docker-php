@@ -204,6 +204,9 @@ xdebug 사용하기 전 **[PHP Debug](https://marketplace.visualstudio.com/items
 
 컨테이너(Container)의 xdebug 설정은 컨테이너로 실행 시 실행되는 [`run.sh`](run.sh) 파일 내에 정의되어 있습니다.
 
+- [Step Debug] Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port) 메시지가 container 내부에서 출력될 경우
+  - Visual Studio Code와 docker container가 연결되지 않아 발생하는 오류로 Visual Studio Code에서 "Start Debugging" 버튼 (재생모양 아이콘)을 클릭해주세요.
+
 ### Production 모드에서 NginX 설정
 
 운영(Production) 모드에서 사용 시 NginX를 이용할 경우 fastcgi를 이용하며 아래와 같이 적용해야 합니다.
