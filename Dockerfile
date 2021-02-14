@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
         wget \
         openssl \
         unzip \
+        libbz2-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libwebp-dev \
@@ -26,8 +27,10 @@ RUN apt-get update && apt-get install -y \
         libonig-dev \
     && phpModules=" \
             bcmath \
+            bz2 \
             ctype \
             exif \
+            fileinfo \
             gd \
             iconv \
             mbstring \
